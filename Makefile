@@ -14,5 +14,3 @@ market.o: market.c
 
 clean:
 	rm -f *.o market
-
-
