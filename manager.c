@@ -59,7 +59,15 @@ int loadData(Product *p){
 
 
 
+	if(fp == NULL) {
+        printf("데이터 파일이 없습니다!\n");
+        return 0;
+    }
 
+    while(!feof(fp)){ // 파일의 끝까지 반복
+        fscanf(fp, "%d %d %[^\n]s", &p[count].weight, &p[count].price, p[count].name);
+        count++;
+    }
 	printf("=> 로딩 성공!\n");
 	return count;
 }
